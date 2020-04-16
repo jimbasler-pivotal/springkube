@@ -8,7 +8,7 @@
 		<version>2.3.0.M4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.vmware.tanzu.spring-kube</groupId>
+	<groupId>com.vmware.tanzu.springkube</groupId>
 	<artifactId>springkube</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springkube</name>
