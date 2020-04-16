@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springkube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springkube
+  template:
+    metadata:
+      labels:
+        app: springkube
+    spec:
+      containers:
+        - image: jbasler/springkube
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          imagePullPolicy: Always
+          name: springkube

@@ -70,9 +70,14 @@ kubectl get all
 kubectl expose deployment springkube --type=LoadBalancer --port=80 --target-port=8080
 ```
 
+Note the EXTERNAL-IP for the springkube service you just created.
+```
+kubectl get service springkube
+```
+
 Check your REST service to see if it is working.
 ```
-curl http://localhost:8080/greeting; echo
+curl http://<EXTERNAL-IP found above>/greeting; echo
 ```
  
 **Let's recap:** 
