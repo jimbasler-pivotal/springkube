@@ -147,11 +147,11 @@ curl http://<EXTERNAL-IP found above>/greeting; echo
  
 **Let's recap:** 
 
-- You learned the functions of readiness and liveness probes in Kubernetes and how to expose actuator health endpoints 
-in Spring Boot that probes can check.
+- You learned the functions of readiness and liveness probes in Kubernetes and how to expose Spring Boot Actuator 
+health endpoints that probes can check.
 - You built and executed a Docker image on your Ubuntu VM using Spring Boot Maven Plugin's build-image goal.
-- You created a deployment on a Kubernetes cluster with the REST service app and configured the readiness and liveness 
-probes.
+- You created a deployment and service on a Kubernetes cluster with the REST service app and configured the readiness 
+and liveness probes.
 
 Congratulations, you have completed LAB-X!
 
