@@ -42,8 +42,9 @@ cd ~/springkube
 ./mvnw spring-boot:build-image
 ```
 
-You just created a Docker image using Spring Boot Maven Plug-in's spring-boot:build-image goal! View the image in your 
-local repository.
+You just created a Docker image using Spring Boot Maven Plug-in's build-image goal! View the image in your 
+local repository. Note: Ignore the CREATED date field. It is not used and the value defaults. For more information on 
+why this field is not used see [Reproducible Builds](https://reproducible-builds.org/docs/timestamps/).
 ```
 docker images
 ```
@@ -51,6 +52,11 @@ docker images
 Run a container locally.
 ```
 docker run -d -p 8080:8080 -t springkube:0.0.1-SNAPSHOT 
+```
+
+Check the status of the container.
+```
+docker container ls
 ```
 
 Check to see if the application is ready to handle requests.
