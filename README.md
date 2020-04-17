@@ -1,8 +1,9 @@
 ![](./images/vmware-logo.png)
 
-This is an experimental lab for use with the 
+This is an experimental lab for use with Ralph Meira's very well done 
 [VMware TKG-i Workshop](https://github.com/rm511130/Tanzu-Workshop-TKG-i). It uses capabilities found in [Spring Boot 
-2.3.0.M4](https://spring.io/blog/2020/04/03/spring-boot-2-3-0-m4-available-now).
+2.3.0.M4](https://spring.io/blog/2020/04/03/spring-boot-2-3-0-m4-available-now). All pre-requisites and environment 
+information can be found in the workshop.
 
 ### LAB-X1: Spring for Kubernetes
 
