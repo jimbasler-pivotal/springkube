@@ -162,7 +162,7 @@ health endpoints that probes can check.
 - You created a deployment and service on a Kubernetes cluster with the REST service app and configured the readiness 
 and liveness probes.
 
-Congratulations, you have completed LAB-X!
+Congratulations, you have completed LAB-X1!
 
 If you would like to dig a bit deeper into interesting Spring Kubernetes tools and technology, check out Ryan Baxter's 
 [excellent workshop](https://hackmd.io/@ryanjbaxter/spring-on-k8s-workshop).
