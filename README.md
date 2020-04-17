@@ -37,7 +37,7 @@ cd ~/springkube
 ./mvnw spring-boot:build-image
 ```
 
-You just created a Docker image using Spring Boot Maven Plug-in's spring-boot:build-image goal. View the image in your 
+You just created a Docker image using Spring Boot Maven Plug-in's spring-boot:build-image goal! View the image in your 
 local repository.
 ```
 docker images
@@ -66,11 +66,11 @@ A Docker image identical to the one you created has been tagged and uploaded int
 jbasler/springkube. Let's use the jbasler/springkube image to run the REST service app on your Kubernetes cluster.
 
 Inspect the deployment that will be used. Notice the readiness and liveness probe definitions.
-
 ```
 cat springkube-deployment.yaml
 ```
-It should look like this.
+
+It should look like this:
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -107,11 +107,31 @@ spec:
           name: springkube
 ```
 
+Inspect the service that will be used.
+```
+cat springkube-service.yaml
+```
+
+It should look like this:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: springkube
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: springkube
+  type: LoadBalancer
+```
+
 Create the deployment and expose it through a service.
 ```
 kubectl create -f springkube-deployment.yaml
-kubectl get all
-kubectl expose deployment springkube --type=LoadBalancer --port=80 --target-port=8080
+kubectl create -f springkube-service.yaml
 ```
 
 Run the command below and note the EXTERNAL-IP for the springkube service you just created. You may see that it is in a 
@@ -134,3 +154,6 @@ in Spring Boot that probes can check.
 probes.
 
 Congratulations, you have completed LAB-X!
+
+If you would like to dig a bit deeper into interesting Spring Kubernetes tools and technology, check out Ryan Baxter's 
+[excellent workshop](https://hackmd.io/@ryanjbaxter/spring-on-k8s-workshop).
