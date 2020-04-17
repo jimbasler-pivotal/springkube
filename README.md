@@ -151,7 +151,9 @@ Check your REST service to see if it is working.
 ```
 curl http://<EXTERNAL-IP found above>/greeting; echo
 ```
- 
+
+---
+
 **Let's recap:** 
 
 - You learned the functions of readiness and liveness probes in Kubernetes and how to expose Spring Boot Actuator 
