@@ -5,21 +5,23 @@ This is an experimental lab for use with Ralph Meira's very well done
 2.3.0.M4](https://spring.io/blog/2020/04/03/spring-boot-2-3-0-m4-available-now). All pre-requisites and environment 
 information can be found in the workshop.
 
-### LAB-X1: Spring for Kubernetes
+## LAB-X1: Spring for Kubernetes
 
 Spring Boot has new and compelling capabilities for Kubernetes including 
 a new Spring Boot Maven Plugin goal for building Docker images without a dockerfile. It also includes the addition of
 [Kubernetes Readiness and Liveness Probe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 endpoints in Spring Boot Actuator.
 
-#### Kubernetes Probes
+### Kubernetes Probes
 - The readiness state tells whether the app is able to accept requests. If an app is not ready, Kubernetes should not 
 route traffic to it.
 
 - The liveness state tells if an app has failed. Restarting a container in such a state can help to make the 
 application more available despite bugs.
 
-#### Clone the repo and explore the Spring Boot project
+---
+
+### Clone the repo and explore the Spring Boot project
 
 ![](./images/java-spring-tiny.png)
 
@@ -29,7 +31,9 @@ cd ~
 git clone https://github.com/jimbasler-pivotal/springkube  
 ```
 
-#### Create and run a Docker container locally
+---
+
+### Create and run a Docker container locally
 
 ![](./images/docker-tiny.png)
 
@@ -59,7 +63,9 @@ Check the REST service endpoint.
 curl http://localhost:8080/greeting; echo
 ```
 
-#### Deploy to Kubernetes
+---
+
+### Deploy to Kubernetes
 
 ![](./images/k8s.png)
 
